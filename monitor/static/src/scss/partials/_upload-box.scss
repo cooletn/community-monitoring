@@ -1,0 +1,163 @@
+$uploadbox-height: 320px;
+.upload-box {
+    height: $uploadbox-height;
+    color: #fff;
+    font-family: 'Open Sans', Roboto, Helvetica, Arial;
+
+    .dropzone-area {
+        padding: 30px 30px 15px 30px;
+        height: $uploadbox-height;
+
+        .dropzone {
+            border: 2px dashed gray;
+            height: 100%;
+            width: 100%;
+            padding: 10px 10px 0 10px;
+            overflow: hidden;
+            @include border-radius(5px);
+        }
+    }
+    .fields-area {
+        padding: 15px;
+        height: $uploadbox-height;
+        label {
+            font-weight: 400;
+            font-size: 1em;
+        }
+        input[type="checkbox"] {
+            display: block;
+            float: left;
+            height: 30px;
+            width: 30px;
+        }
+        textarea {
+            width: 100%;
+        }
+        textarea:focus {
+            border: none;
+            outline: none;
+        }
+        .terms-label {
+            display: block;
+            float: left;
+            line-height: 35px;
+            padding: 0 10px;
+        }
+        .submit-photos {
+            float: right;
+            font-size: 1.2em;
+            padding: 10px;
+        }
+        .submit-photos:focus {
+            outline: none;
+        }
+        .submit-photos .fa {
+            display: block;
+            text-align: center;
+            font-size: 1.7em;
+        }
+
+        .location-area {
+            position: absolute;
+            bottom: 20px;
+            left: 15px;
+        }
+    }
+}
+
+.editor .upload-grand-box {
+    padding-top: 60px;
+    .grand-dropzone {
+        height: 480px;
+        overflow: auto;
+    }
+    .btn i {
+        display: block;
+        text-align: center;
+        margin-left: 0;
+        font-size: 3em;
+    }
+}
+
+
+/* Extra small device */
+@media (max-width: $screen-xs-max) {
+    .upload-box .dropzone-area {
+        height: 300px;
+        .dropzone {
+            padding: 0;
+        }
+    }
+
+    .upload-box .fields-area .submit-photos {
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 1em;
+        .fa {
+            font-size: 2em;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 5px;
+        textarea {
+            margin: 0;
+        }
+    }
+    .input-group .form-control {
+        margin: 0;
+    }
+}
+
+/* Small Device */
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    .upload-box {
+        .fields-area {
+            padding-left: 0;
+            .form-group { padding-left: 0; }
+            .location-area {
+                left: 0;
+                padding-left: 0;
+            }
+            .submit-photos{
+                font-size: 1em;
+                .fa {
+                    font-size: 1.2em;
+                    display: inline-block;
+                }
+            }
+        }
+        .dropzone-area .dropzone {
+            padding: 0;
+        }
+    }
+
+
+
+}
+
+/* Medium Device */
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    .upload-box {
+        .fields-area {
+            padding-left: 0;
+            .form-group { padding-left: 0; }
+            .location-area {
+                left: 0;
+                padding-left: 0;
+            }
+            .submit-photos{
+                padding: 10px;
+                font-size: 1.2em;
+                .fa {
+                    display: inline-block;
+                font-size: 1.2em;
+                }
+            }
+        }
+    }
+}
+
+/* Large Device */
+@media (min-width: $screen-lg-min) {
+}

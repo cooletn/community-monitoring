@@ -1,0 +1,94 @@
+$menu-height: 45px;
+$menu-width: ((97% / 4));
+
+.menubar-row {
+    background-color: #fff;
+}
+.main-menubar {
+    height: $menu-height;
+    list-style: none;
+    padding: 0;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    width: 100%;
+
+    li {
+        background-color: #fff;
+        font-weight: 800;
+        width: $menu-width;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 3px 30px;
+        margin-right: .5%;
+        @include block-left;
+        @include box-shadow(inset 0 0 2px 0 rgba(0,0,0,0.6));
+        @include border-radius(3px);
+        @include transition(.3s);
+
+        a {
+            cursor: pointer;
+            color: #2e2e2e;
+            font-family: 'Oswald';
+            font-weight: 600;
+            font-size: 1.2em;
+            text-decoration: none;
+        }
+
+        i {
+            margin-right: 10px;
+            font-size: 1.3em;
+            line-height: $menu-height;
+        }
+
+        &:hover, &.active {
+            text-decoration: none;
+            background-color: #2e2e2e;
+            a {color: #fff;}
+        }
+    }
+}
+
+
+/* Extra small device */
+@media (max-width: $screen-xs-max) {
+    .main-menubar li {
+        margin-top: 4px;
+        font-size: 0.8em;
+        width: 49% !important;
+        padding: 3px 15px;
+        text-align: left;
+        @include block-left;
+        a i {
+            padding-right: 3px;
+            margin-right: 5px;
+        }
+    }
+}
+
+/* Small Device */
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    .main-menubar li {
+        font-size: 0.9em;
+        text-align: center;
+        padding: 15px 0;
+        a i {
+            display: block;
+            text-align: center;
+            line-height: 1.5em;
+        }
+    }
+}
+
+/* Medium Device */
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    .main-menubar li{
+        padding: 3px 20px;
+        a {
+            font-size: 1em;
+        }
+    }
+}
+
+/* Large Device */
+// @media (min-width: $screen-lg-min) {
+// }

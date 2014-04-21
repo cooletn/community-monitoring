@@ -1,0 +1,25 @@
+$livebox-height: 45px;
+$bg-color: #2e2e2e;
+$live-width: 150px;
+.live-box {
+    bottom: 0;
+    background-color: $bg-color;
+    color: #fff;
+    padding: 0 20px;
+    position: fixed;
+    left: 0;
+    height: $livebox-height;
+    width: 100%;
+    .tweets {
+        display: block;
+        @include reset-list;
+        li {
+            line-height: $livebox-height;
+            @include block-left;
+            padding-right: ($live-width + 20px);
+        }
+        strong {
+            color: #56fff3;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+[
+    {
+        "pk": null,
+        "date": "2013-12-25",
+        "time": "06:00",
+        "location": "La Paz, El Alto",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing el.",
+        "url": "http://jvacx.com"
+    },
+    {
+        "pk": null,
+        "date": "2014-01-23",
+        "time": "07:23",
+        "location": "Laja, La Paz",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing el.",
+        "url": "http://jvacx.com"
+    },
+    {
+        "pk": null,
+        "date": "2014-01-24",
+        "time": "00:56",
+        "location": "Coroico, La Paz",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing el.",
+        "url": "http://jvacx.com"
+    },
+    {
+        "pk": null,
+        "date": "2014-01-30",
+        "time": "23:16",
+        "location": "Copacabana, La Paz",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing el.",
+        "url": "http://jvacx.com"
+    },
+    {
+        "pk": null,
+        "date": "2014-02-1",
+        "time": "13:15",
+        "location": "Valle Grande, Santa Cruz",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing el.",
+        "url": "http://jvacx.com"
+    },
+    {
+        "pk": null,
+        "date": "2014-02-13",
+        "time": "14:07",
+        "location": "Quillacollo, Cochabamba",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipisicing el.",
+        "url": "http://jvacx.com"
+    }
+]

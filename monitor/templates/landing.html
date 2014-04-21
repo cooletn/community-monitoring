@@ -1,0 +1,25 @@
+{% extends 'layouts/base.html' %}
+{% load i18n %}
+{% load static from staticfiles %}
+{% block extrastyles %}{% endblock %}
+{% block extrahead %}{% endblock %}
+
+
+{% block title %}Home{% endblock %}
+{% block content %}
+        {% include "partials/_navbar.html" %}
+        <div class="container">
+          <br><br><br><br>
+          <p>
+            Aqui ira la información
+          </p>
+
+          <a href="{% url 'gen' %}" class="btn btn-success">
+            Generar Datos
+          </a>
+
+        </div>
+{% endblock %}
+
+{% block extrascripts %}
+{% endblock %}

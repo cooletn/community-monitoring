@@ -1,0 +1,550 @@
+@import "../bootstrap/mixins";
+$carousel-control-color: #fff;
+$slider-height: 680px;
+$slider-margin-top: 50px;
+$slide-width: 950px;
+.swiper-container {
+    margin: $slider-margin-top auto 0 auto;
+    background-color: #000;
+    color: #fff;
+    height: $slider-height;
+    overflow:hidden;
+    position:relative;
+    text-align: center;
+    width: 100%;
+    z-index:1;
+    @include backface(hidden);
+    .swiper-wrapper {
+        margin: 0 auto;
+        position:relative;
+        width:100%;
+        @include transition(
+            left 0.3s translate3d(0px,0,0) ease,
+            top 0.3s translate3d(0px,0,0) ease
+        );
+        @include box-sizing(content-box);
+    }
+    figure.swiper-slide {
+        bottom: 0;
+        color: #fff;
+        height: $slider-height;
+        display: block;
+        float: left;
+        position: relative;
+        width: $slide-width;
+        img {
+            display: inline-block;
+            height: 100%;
+            width: 100%;
+        }
+        figcaption {
+            background-color: rgba(0,0,0,0.7);
+            bottom: 0;
+            color: #fff;
+            font-family: 'Steelfish';
+            padding: 25px 30px;
+            position: absolute;
+            left: 0;
+            text-align: left;
+            text-shadow: 0 0 10px #000, 0 0 10px #000;
+            width:100%;
+            z-index: 2;
+            .datetime {
+                i {
+                    font-size: 1.2em;
+                    padding-right: 5px;
+                }
+                font-size: 1.8em;
+
+            }
+            .title {
+                font-size: 4em;
+                padding-right: 220px;
+                letter-spacing: -2px;
+                line-height: 1.2em;
+            }
+            .description {
+                font-size: 1.2em;
+                padding-right: 220px;
+                font-family: 'Oswald';
+                line-height: 1em;
+                text-shadow:
+                    0 0 10px #000,
+                    0 0 10px #000,
+                    0 0 10px #000,
+                    0 0 10px #000;
+                font-weight: 300;
+            }
+            .social-box {
+                background-color: rgba($mas-color, 0.5);
+                cursor: pointer;
+                display: block;
+                font-family: 'Oswald';
+                font-weight: 800;
+                position: absolute;
+                right: 15px;
+                text-shadow: none;
+                top: 15px;
+                @include border-radius(7px);
+                @include transition(.3s);
+
+                &:hover {
+                    background-color: rgba($mas-color,0.9);
+                }
+                .count {
+                    display: block;
+                    font-size: 4em;
+                    text-align: center;
+                    i {
+                        padding-left: 15px;
+                        display: inline-block;
+                        font-size: 1.4em;
+                    }
+                }
+                .hashtag {
+                    display: block;
+                    padding-top: 5px;
+                    text-align: center;
+                    font-size: 1.8em;
+                    font-weight: 600;
+                }
+            }
+        }
+        .share {
+            $share-width: 60px;
+            cursor: pointer;
+            display: block;
+            list-style: none;
+            position: absolute;
+            right: 20px;
+            top: 30px;
+            padding: 0;
+            opacity: 0.7;
+            z-index: 12;
+            &:hover { opacity: 1; }
+            & > a {
+                background-color: rgba(0,0,0,0.5);
+                color: #fff;
+                height: 50px;
+                width: 50px;
+                @include border-radius(4px);
+                @include transition(.3s);
+                &:hover {
+                    background-color: #000;
+                }
+            }
+
+            & > a .share-icon {
+                background-color: rgba(0,0,0,0.5);
+                border: none;
+                display: block;
+                height: $share-width;
+                padding: 10px;
+                width: $share-width;
+                @include border-radius(5px);
+                @include transition(.3s);
+            }
+            & > a .share-icon:hover {
+                background-color: #000;
+            }
+            .dropdown-menu {
+                background-color: rgba(0,0,0,0.5);
+                margin-top: 5px;
+                min-width: $share-width;
+                text-align: center;
+                border: none !important;
+                @include transition(.3s);
+            }
+            .dropdown-menu li a{
+                border: none;
+                color: #fff;
+                height: $share-width;
+                line-height: $share-width;
+                font-size: 2em;
+                padding: 0;
+                margin: 0;
+                @include transition(.3s);
+            }
+            .dropdown-menu li a.facebook:hover { background-color: $social-facebook; }
+            .dropdown-menu li a.twitter:hover { background-color: $social-twitter;}
+            .dropdown-menu li a.other:hover { background-color: #000; }
+        }
+    }
+    .dividers {
+        bottom: 0;
+        position: absolute;
+        z-index: 3;
+        height: 8px;
+        width: $slide-width;
+    }
+    .dividers b {
+        $well: (100% / 7);
+        color: transparent;
+        text-indent: 9999999;
+        display: block;
+        float: left;
+        height: 100%;
+        width: $well;
+    }
+    .swiper-control.left,
+    .swiper-control.right {
+        color: #fff;
+        text-shadow: 0px 0px 5px black;
+        font-size: 3em;
+        position: absolute;
+        top: ($slider-height / 3);
+        z-index: 15;
+    }
+    .swiper-control.left {
+        left: 20px;
+    }
+    .swiper-control.right {
+        right: 20px;
+    }
+    .dividers b:nth-child(1){ background-color: #cf000f; } //Rojos
+    .dividers b:nth-child(2){ background-color: #2574a9; } //Azul
+    .dividers b:nth-child(3){ background-color: #6bb9f0; } //Celeste
+    .dividers b:nth-child(4){ background-color: #c5eff7; } //Crema
+    .dividers b:nth-child(5){ background-color: #03a678; } //Verde
+    .dividers b:nth-child(6){ background-color: #f7ca18; } //Amarillo
+    .dividers b:nth-child(7){ background-color: #e87e04; } //Naranja
+    .swiper-wp8-horizontal { -ms-touch-action: pan-y; }
+    .swiper-wp8-vertical { -ms-touch-action: pan-x; }
+    .swiper-slide-active {
+        /* Specific active slide styling: */
+    }
+    .swiper-slide-visible {
+        /* Specific visible slide styling: */
+    }
+    .swiper-pagination-switch {
+    /* Stylize pagination button: */
+    }
+    .swiper-active-switch {
+        /* Specific active button style: */
+    }
+    .swiper-visible-switch {
+        /* Specific visible button style: */
+    }
+}
+
+
+
+
+/* Extra small device */
+@media (max-width: $screen-xs-max) {
+    $slider-height: 250px;
+    $slide-width: 320px;
+    .swiper-container {
+        height: $slider-height;
+        figure.swiper-slide {
+            height: $slider-height;
+            width: $slide-width;
+            figcaption {
+                padding: 10px 10px 12px 10px;
+                .datetime {
+                    font-size:  1em;
+                }
+                .title {
+                    line-height: .9em;
+                    font-size: 2.2em;
+                    letter-spacing: -1px;
+                    padding-right: 70px;
+                    margin-top: -2px;
+                    line-height: 1em;
+                }
+                .social-box {
+                    right: 8px;
+                    top: 8px;
+                    z-index: 10;
+                    @include border-radius(3px);
+                    .count {
+                        padding: 8px 12px 0px 12px;
+                        font-size: 1.3em;
+                        i {
+                            padding-left: 7px;
+                            font-size: 1.2em;
+                        }
+                    }
+                    .hashtag {
+                        padding: 0px 10px 14px 10px;
+                        font-size: .7em;
+                        line-height: 1.2em;
+                    }
+
+                }
+            }
+            .share {
+                $share-width: 35px;
+                right: 10px;
+                top: 10px;
+                & > a {
+                    background-color: rgba(0,0,0,0.5);
+                    color: #fff;
+                    @include transition(.3s);
+                }
+
+                & > a .share-icon {
+                    padding: 6px;
+                    height: $share-width;
+                    width: $share-width;
+                    @include border-radius(3px);
+                }
+
+                .dropdown-menu {
+                    min-width: $share-width;
+                }
+                .dropdown-menu li a{
+                    font-size: 1.2em;
+                    height: $share-width;
+                    line-height: $share-width;
+                }
+            }
+        }
+        .dividers { width: 100%; }
+    }
+}
+
+/* Small Device */
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    $slider-height: 450px;
+    $slide-width: 768px;
+    $slide-padding-right: 140px;
+
+    .swiper-container {
+        height: $slider-height;
+        figure.swiper-slide {
+            height: $slider-height;
+            width: $slide-width;
+            figcaption {
+                padding: 12px 25px 20px 25px;
+                .datetime {
+                    font-size:  1.6em;
+                }
+                .title {
+                    line-height: .3em;
+                    font-size: 4em;
+                    letter-spacing: 0px;
+                    padding: 0 $slide-padding-right 0 0;
+                    margin-top: -2px;
+                    margin-bottom: 0px;
+                    line-height: 1em;
+                }
+                .description {
+                    padding-right: $slide-padding-right;
+                    font-size: 1.1em;
+                    font-weight: 400;
+                }
+                .social-box {
+                    right: 15px;
+                    top: 15px;
+                    z-index: 10;
+                    @include border-radius(3px);
+                    .count {
+                        font-size: 2.5em;
+                        padding: 10px 15px 0px 15px;
+                        i {
+                            padding-left: 7px;
+                            font-size: 1em;
+                        }
+                    }
+                    .hashtag {
+                        font-size: 1.2em;
+                        line-height: 1em;
+                        padding: 4px 15px 12px 15px;
+                    }
+
+                }
+            }
+            .share {
+                $share-width: 42px;
+                right: 12px;
+                top: 12px;
+                & > a {
+                    background-color: rgba(0,0,0,0.5);
+                    color: #fff;
+                    @include transition(.3s);
+                }
+
+                & > a .share-icon {
+                    padding: 6px;
+                    height: $share-width;
+                    width: $share-width;
+                    @include border-radius(3px);
+                }
+
+                .dropdown-menu {
+                    min-width: $share-width;
+                }
+                .dropdown-menu li a{
+                    font-size: 1.4em;
+                    height: $share-width;
+                    line-height: $share-width;
+                }
+            }
+        }
+        .dividers { width: 100%; }
+    }
+}
+
+/* Medium Device */
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    $slider-height: 550px;
+    $slide-width: $screen-md-min;
+    $slide-padding-right: 140px;
+
+    .swiper-container {
+        height: $slider-height;
+        figure.swiper-slide {
+                height: $slider-height;
+                width: $slide-width;
+            figcaption {
+                padding: 12px 25px 20px 25px;
+                width: 100%;
+                .datetime {
+                    font-size:  1.6em;
+                }
+                .title {
+                    line-height: .3em;
+                    font-size: 4em;
+                    letter-spacing: 0px;
+                    padding: 0 $slide-padding-right 0 0;
+                    margin-top: -2px;
+                    margin-bottom: 0px;
+                    line-height: 1.2em;
+                }
+                .description {
+                    padding-right: $slide-padding-right;
+                    font-size: 1.2em !important;
+                }
+                .social-box {
+                    right: 10px;
+                    top: 10px;
+                    z-index: 10;
+                    @include border-radius(3px);
+                    .count {
+                        font-size: 2.7em;
+                        padding: 15px 20px 0px 20px;
+                        i {
+                            padding-left: 7px;
+                            font-size: 1em;
+                        }
+                    }
+                    .hashtag {
+                        font-size: 1.1em;
+                        line-height: 1em;
+                        padding: 2px 15px 20px 15px;
+                    }
+                }
+            }
+            .share {
+                $share-width: 50px;
+                right: 15px;
+                top: 15px;
+                & > a {
+                    background-color: rgba(0,0,0,0.5);
+                    color: #fff;
+                    @include transition(.3s);
+                }
+
+                & > a .share-icon {
+                    padding: 8px;
+                    height: $share-width;
+                    width: $share-width;
+                    @include border-radius(3px);
+                }
+
+                .dropdown-menu {
+                    min-width: $share-width;
+                }
+                .dropdown-menu li a{
+                    font-size: 1.8em;
+                    height: $share-width;
+                    line-height: $share-width;
+                }
+            }
+        }
+        .dividers { width: 100%; }
+    }
+}
+
+
+/* Large Device */
+@media (min-width: $screen-lg-min) {
+    $slider-height: 700px;
+    $slide-width: $screen-lg-min;
+    $slide-padding-right: 140px;
+
+    .swiper-container {
+        height: $slider-height;
+        figure.swiper-slide {
+                height: $slider-height;
+                width: $slide-width;
+            figcaption {
+                padding: 12px 25px 20px 25px;
+                .datetime {
+                    font-size:  1.6em;
+                }
+                .title {
+                    line-height: .3em;
+                    font-size: 4em;
+                    letter-spacing: 0px;
+                    padding: 0 $slide-padding-right 0 0;
+                    margin-top: -2px;
+                    margin-bottom: 0px;
+                    line-height: 1.2em;
+                }
+                .description {
+                    padding-right: $slide-padding-right;
+                    font-size: 1.3em;
+                    font-weight: 400;
+                }
+                .social-box {
+                    right: 14px;
+                    top: 14px;
+                    z-index: 10;
+                    @include border-radius(3px);
+                    .count {
+                        font-size: 2.8em;
+                        padding: 14px 18px 0px 18px;
+                        i {
+                            padding-left: 7px;
+                            font-size: 1em;
+                        }
+                    }
+                    .hashtag {
+                        font-size: 1.2em;
+                        line-height: 1em;
+                        padding: 4px 18px 14px 18px;
+                    }
+                }
+            }
+            .share {
+                $share-width: 50px;
+                right: 18px;
+                top: 18px;
+                & > a {
+                    background-color: rgba(0,0,0,0.5);
+                    color: #fff;
+                    @include transition(.3s);
+                }
+
+                & > a .share-icon {
+                    padding: 10px;
+                    height: $share-width;
+                    width: $share-width;
+                    @include border-radius(3px);
+                }
+
+                .dropdown-menu {
+                    min-width: $share-width;
+                }
+                .dropdown-menu li a{
+                    font-size: 1.8em;
+                    height: $share-width;
+                    line-height: $share-width;
+                }
+            }
+        }
+        .dividers { width: 100%; }
+    }
+}

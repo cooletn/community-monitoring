@@ -1,0 +1,232 @@
+
+.navbar-brand img {
+	height: 35px;
+	margin-left: -10px;
+	margin-top: -8px;
+	width: auto;
+}
+
+.navbar-inverse {
+	// background-color: $mas-color;
+	background-color: transparent;
+}
+.navbar-collapse {
+	// background-color: $mas-color;
+	background-image: url("../img/bg.png");
+	border-bottom: 1px solid darken($mas-color, 5%);
+	box-shadow: 0px 1px 3px #000;
+	z-index: 1300;
+}
+
+.navbar {
+	border: none;
+	border-bottom: -5px !important;
+	.upload-box {
+		// background-color: $mas-color;
+		background-image: url("../img/bg.png");
+		display: block;
+		height: 0px;
+		overflow: hidden;
+		visibility: hidden;
+		@include transition(.4s);
+	}
+	.upload-box.visible {
+		height: 320px;
+		visibility: visible;
+	}
+}
+
+.editor .camera-wrapper { display: none; }
+
+.camera-wrapper {
+	width: 100%;
+	background-color: transparent;
+	z-index: 1000;
+	.camera-button {
+		display: block;
+		margin: -65px auto 0 auto;
+		text-align: center;
+		font-size: 2em;
+		color: #fff;
+		height: 120px;
+		width: 120px;
+		i.fa {
+			border: 1px solid #efefef;
+			box-shadow: inset 0px 0px 3px #000;
+			padding: 12px;
+			@include transition(.3s);
+			@include border-radius(10px);
+		}
+		i.fa:hover {
+			background-color: rgba(0,0,0,0.5);
+		}
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+	}
+}
+/*notification*/
+.user-nav  {
+	padding: 0 40px 0 0;
+	.dropdown-toggle {
+		padding: 7px 12px 8px 12px;
+		.user-avatar {
+			width: 35px;
+			height: 35px;
+			margin-right: 8px;
+			@include border-radius($nav-border-radius);
+		}
+	}
+	li {
+		.btn {
+			border: 2px solid $darken;
+			display: inline-block;
+			padding: 7px 10px;
+			margin-top: 6px;
+			@include transition(all .3s ease);
+		}
+		.btn:hover {
+			background-color: #000 !important;
+		}
+	}
+	li.mobile-app a {
+		border: none;
+		font-size: 2em;
+		color: #fff;
+	}
+	.dropdown-menu  {
+	    padding: 0;
+	    width: 260px;
+		.log-arrow-up {
+		    background: url("../img/arrow-up.png") no-repeat;
+		    width: 20px;
+		    height: 11px;
+		    position: absolute;
+		    right: 20px;
+		    top: -10px;
+		}
+
+		li {
+		    float: left;
+		    text-align: center;
+		    width: 33.3%;
+
+			a {
+			    // border-bottom: 1px solid #EBEBEB !important;
+			    color: gray;
+			    display: inline-block;
+			    font-size: 12px;
+			    list-style: none;
+			    padding: 15px 10px;
+			    width: 100%;
+			    @include transition(all .3s ease);
+
+			    i {
+			    	font-size: 20px;
+			    	display: block;
+			    }
+			}
+			a:hover {
+			    background-color: #efefef;
+			    color: $darken;
+			    @include transition(.25s);
+			}
+		}
+
+		li:last-child {
+		    border-radius: 0 0 5px 5px;
+		    float: left;
+		    color: white;
+		    text-align: center;
+		    background: $darken;
+		    width: 100%;
+		    a {
+		    	color: white;
+		    }
+		    a:hover {
+		    	background: lighten($darken, 10%);
+		    	border-radius: 0 0 5px 5px;
+		    }
+		}
+	}
+
+	.search {
+		background-color: transparent;
+		background-image: url(../img/search-icon.png);
+		background-position: 0 0;
+		background-repeat: no-repeat;
+	    border: none;
+	    box-shadow: none;
+	    height: 40px;
+	    margin-top: 8px;
+	    padding: 0 5px 0 35px;
+	    width: 35px;
+	    @include transition(all .3s ease);
+	}
+
+	.search:focus {
+	    color: #2e2e2e;
+		background-color: #fff;
+	    border: 1px solid #efefef;
+	    box-shadow: none;
+	    font-weight: 300;
+	    width: 200px;
+	}
+
+}
+
+/* Extra small device */
+@media (max-width: $screen-xs-max) {
+	.navbar-header {
+		background-image: url(../img/bg.png);
+	}
+	.navbar .upload-box {
+		overflow: auto;
+	}
+	.camera-wrapper {
+		position: absolute;
+		margin-top: 25px;
+		.camera-button {
+			margin: -55px auto 0 auto;
+			height: 85px;
+			width: 85px;
+		}
+	}
+	.navbar .upload-box.visible {
+		height: 450px;
+	}
+	.user-nav {
+		margin: -15px -15px 5px -15px;
+		padding: 0px 15px;
+		li {
+			display: block;
+			float: right;
+		}
+		.mobile-app {
+			width: 60px;
+		}
+	}
+}
+
+/* Small Device */
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+	.navbar-header {
+	}
+
+	.camera-wrapper .camera-button {
+		margin: -60px auto 0 auto;
+		height: 95px;
+		width: 95px;
+	}
+}
+
+/* Medium Device */
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+}
+
+/* Large Device */
+@media (min-width: $screen-lg-min) {
+}
+

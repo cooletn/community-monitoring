@@ -1,0 +1,152 @@
+$lila: #470dae;
+$azul: #0b679e;
+$verde-claro: #10dd24;
+$blanco: #fff;
+$amarillo: #ed9a11;
+$naranja: #ed6211;
+$rojo: #ce0f3b;
+//------------------------------------------------------------------------------
+$diary-height: 320px;
+
+.diary-box {
+    &.diary {
+        background-color: darken($mas-color, 3%);
+        @include border-radius(3px);
+    }
+    .diary-content {
+        text-align: center;
+        height: $diary-height;
+        overflow: hidden;
+        clear: both;
+        width: 100%;
+
+    }
+}
+.diary {
+    color: #fff;
+    display: block;
+    text-align: left;
+    padding: 0 15px;
+    &.grid:hover {
+        @include transform(scale(1));
+    }
+    h3 {
+        text-transform: uppercase;
+        font-size: 1.6em;
+        font-family: 'Oswald', Helvetica, Arial;
+        font-weight: 600;
+        line-height: 1em;
+        padding: 0 18px;
+        text-align: center;
+        @include full-width;
+    }
+    .day {
+        text-transform: capitalize;
+        font-size: 1.2em;
+        padding: 12px 18px 0px 18px;
+        margin-top: 0px;
+        line-height: em;
+        @include full-width;
+    }
+    .lines {
+        @include full-width;
+        b {
+            display: block;
+            float: left;
+            height: 2px;
+            width: (100% / 7);
+        }
+        b.lila{ background-color: #470dae; }
+        b.azul{ background-color: #0b679e; }
+        b.verde-claro{ background-color: #10dd24; }
+        b.blanco{ background-color: #fff; }
+        b.amarillo{ background-color: #ed9a11; }
+        b.naranja{ background-color: #ed6211; }
+        b.rojo { background-color: #ce0f3b; }
+    }
+    .hour {
+        font-size: 4.5em;
+        line-height: .9em;
+        font-family: 'robotothin', Helvetica, Arial;
+        padding: 0 32px 0 18px;
+        letter-spacing: -3px;
+        @include full-width;
+        sup {
+            font-size: .5em;
+        }
+    }
+    .location {
+        padding: 0 32px 0 18px;
+        font-size: 1.8em;
+        font-weight: 600;
+        line-height: .9em;
+        margin: 15px 0;
+        @include full-width;
+    }
+    .mini-desc {
+        padding: 0 32px 0 18px;
+        font-size: 1.2em;
+        // text-align: center;
+        @include full-width;
+    }
+    .icon-share {
+        text-align: center;
+        line-height: 70px;
+        @include full-width;
+        img {
+            height: 30px;
+            width: 25px;
+            opacity: 0.5;
+            @include transition(.3s);
+        }
+        img:hover {
+            opacity: 1;
+        }
+    }
+}
+/* Extra small device */
+@media (max-width: $screen-xs-max) {
+    $diary-height: 300px;
+    .diary-box.diary {
+        margin: 0 0 20px 0;
+        width: 100%;
+        @include border-radius(0px);
+        .diary-content {
+            text-align: center;
+            height: $diary-height;
+        }
+    }
+    .diary {
+        h3 { font-size: 2em; }
+        .hour {
+            font-size: 4.3em;
+        }
+        .location {
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        .day {
+            font-size: 1.2em;
+        }
+        .mini-desc {
+            text-align: center;
+            display: block;
+            font-size: 1em;
+            padding: 0 40px;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+/* Small Device */
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+}
+
+/* Medium Device */
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+}
+
+/* Large Device */
+@media (min-width: $screen-lg-min) {
+}

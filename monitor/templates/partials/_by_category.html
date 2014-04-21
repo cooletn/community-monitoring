@@ -1,0 +1,16 @@
+<br>
+<div class="alert alert-danger">Hay <strong>{{nro_cat}}. Categorias</strong></div>
+<table class="table table-bordered">
+<tr>
+    <th>Nro.</th>
+    <th>ETIQUETA</th>
+    <th>URL</th>
+</tr>
+{% for category in by_category %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td><a href="#">{{category.label}}</a></td>
+        <td>{{category.url}}</td>
+    </tr>
+{% endfor %}
+</table>

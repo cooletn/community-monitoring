@@ -1,0 +1,5 @@
+Django
+docutils
+psycopg2
+#Pillow
+

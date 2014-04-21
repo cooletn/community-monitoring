@@ -1,0 +1,346 @@
+.dropzone,
+.dropzone *,
+.dropzone-previews,
+.dropzone-previews * {
+  @include box-sizing(border-box);
+}
+
+
+.dropzone {
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.02);
+    padding: 0;
+
+    &.dz-clickable{
+        cursor: pointer;
+        .dz-message,
+        .dz-message span {
+            cursor: pointer;
+        }
+
+        * {
+            cursor: default;
+        }
+    }
+    .dz-message{
+        opacity: 1;
+    }
+
+    &.dz-drag-hover {
+        border-color: rgba(0, 0, 0, 0.15);
+        background: rgba(0, 0, 0, 0.04);
+    }
+
+    &.dz-started{
+        .dz-message {
+            display: none;
+        }
+    }
+}
+.dropzone,
+.dropzone-previews {
+    .dz-preview {
+        background: $alternative-mas-color;
+        position: relative;
+        display: inline-block;
+        margin: 17px;
+        vertical-align: top;
+        border: 1px solid darken($mas-color, 5%);
+    }
+    &.dz-file-preview{
+        [data-dz-thumbnail]{
+            display: none;
+        }
+    }
+
+    .dz-details {
+        width: 100px;
+        height: 100px;
+        position: relative;
+        background: #ebebeb;
+        padding: 5px;
+        margin-bottom: 22px;
+
+       .dz-filename{
+            overflow: hidden;
+            height: 100%;
+        }
+        img {
+            absolute: top left;
+            width: 100px;
+            height: 100px;
+        }
+
+        .dz-size {
+            absolute: bottom -28px left 3px;
+            height: 28px;
+            line-height: 28px;
+        }
+    }
+
+    &.dz-error{
+        .dz-error-mark{
+            display: block;
+        }
+    }
+    &.dz-success{
+        .dz-success-mark{
+           display: block;
+        }
+    }
+
+
+    // &:hover .dz-details img {display: none; }
+
+
+    .dz-success-mark,
+    .dz-error-mark {
+        display: none;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+        text-align: center;
+        right: -10px;
+        top: -10px;
+    }
+
+    .dz-success-mark {
+        color: blue;
+    }
+    .dz-error-mark {
+        color: #EE162D;
+    }
+    .dz-progress {
+        position: absolute;
+        top: 100px;
+        left: 6px;
+        right: 6px;
+        height: 6px;
+        background: #d7d7d7;
+        display: none;
+
+        .dz-upload {
+            display: block;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            // background-color: #8CC657;
+        }
+    }
+
+
+    &.dz-processing{
+        .dz-progress{
+            display: block;
+        }
+    }
+    .dz-error-message {
+        display: none;
+        absolute: top -5px left -20px;
+        background: rgba(245, 245, 245, 0.8);
+        padding: 8px 10px;
+        color: #800;
+        min-width: 140px;
+        max-width: 500px;
+        z-index: 500;
+    }
+    &:hover.dz-error{
+        .dz-error-message{
+            display: block;
+        }
+    }
+}
+
+
+@keyframes loading {
+
+  from {
+    background-position: 0 -400px;
+  }
+  to {
+    background-position: -7px -400px;
+  }
+}
+
+.dropzone {
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    border-radius: 3px;
+    background: rgba(0, 0, 0, 0.03);
+    .dz-default.dz-message {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out;
+        background-image: url("../img/upload.svg");
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+
+        position: absolute;
+        width: 428px;
+        height: 123px;
+        margin-left: -(428px / 2);
+        margin-top: -(123px / 2);
+        top: 50%;
+        left: 50%;
+        span{
+            display: none;
+        }
+    }
+
+    &.dz-square{
+        .dz-default.dz-message{
+            background-position: 0 -123px;
+            width: 268px;
+            margin-left: -(268px / 2);
+            height: 174px;
+            margin-top: -(174px / 2);
+        }
+    }
+
+    &.dz-drag-hover{
+        .dz-message{
+            opacity: 0.15;
+        }
+    }
+
+    &.dz-started{
+        .dz-message{
+            display: block;
+            opacity: 0; // Rather fade out nicely
+        }
+    }
+}
+
+.dropzone,
+.dropzone-previews {
+    .dz-preview {
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.16);
+        font-size: 14px;
+    }
+    &.dz-image-preview {
+        &:hover {
+            .dz-details {
+                img{
+                    display: block;
+                    opacity: 0.1;
+                }
+            }
+        }
+    }
+
+    &.dz-success{
+        .dz-success-mark{
+            opacity: 1;
+        }
+    }
+    &.dz-error{
+        .dz-error-mark {
+            opacity: 1;
+        }
+        .dz-progress .dz-upload {
+            background: #EE1E2D;
+        }
+    }
+
+    .dz-error-mark,
+    .dz-success-mark {
+        display: block;
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        -webkit-background-size: 100% 100%;
+        background-size: 100% 100%;
+        opacity: .9;
+        @include transition(opacity 0.4s ease-in-out);
+        span{
+            display: none;
+        }
+    }
+    .dz-success-mark {
+        background-image: url("../img/yes.svg");
+    }
+    .dz-error-mark {
+        background-image: url("../img/not.svg");
+    }
+    .dz-progress{
+        .dz-upload{
+            animation: loading 0.4s linear infinite;
+            transition: width 0.3s ease-in-out;
+            border-radius: 2px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background-repeat: repeat-x;
+            background-position: 0px -400px;
+        }
+    }
+
+
+    &.dz-success {
+        .dz-progress {
+            display: block;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+    }
+
+    .dz-error-message{
+        display: block;
+        opacity: 0; // Rather fade in / out
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    &:hover.dz-error {
+        .dz-error-message {
+            opacity: 1;
+        }
+    }
+
+    a.dz-remove {
+        background-image: linear-gradient(top, #fafafa, #eee);
+        border: 1px solid #eee;
+        color: #d3d3d3;
+        cursor: pointer;
+        display: block;
+        font-size: 1.2em;
+        padding: 10px 5px;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 26px;
+        @include border-radius(3px);
+        @include transition(.3s);
+        &:hover{
+            background-color: rgba(0,0,0,0.5);
+            color: #fff;
+            font-weight: bold;
+        }
+        &:before {
+            font-family: FontAwesome;
+            content: "\f014";
+            font-size: 1em;
+            padding-right: 5px;
+        }
+    }
+}
+
+/* Extra small device */
+@media (max-width: $screen-xs-max) {
+
+}
+
+/* Small Device */
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+}
+
+/* Medium Device */
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+}
+
+/* Large Device */
+@media (min-width: $screen-lg-min) {
+}

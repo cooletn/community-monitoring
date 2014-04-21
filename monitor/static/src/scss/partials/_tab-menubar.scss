@@ -1,0 +1,115 @@
+$menu-fonsize: 20px;
+$menu-border-color: $jordy-blue;
+$menu-height: 60px;
+
+
+.tab-menubar {
+    color: $mas-color;
+    display: block;
+    font-family: 'roboto_condensedlight', Helvetica, Arial;
+    font-size: $menu-fonsize;
+    height: $menu-height;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+    .swiper-wrapper {
+        .swiper-slide {
+            display: block;
+            float: left;
+            margin-left: 3px;
+        }
+
+        .swiper-slide a {
+            color: $mas-color;
+            display: block;
+            font-size: 1em;
+            line-height: ($menu-height - 20px);
+            margin-top: 10px;
+            text-decoration: none;
+            @include transition(.3s);
+            @include border-radius(3px);
+        }
+
+        .swiper-slide a:hover,
+        .swiper-slide a.active {
+            border-bottom: 3px solid $menu-border-color;
+            font-size: 1.2em;
+            font-family: 'roboto_condensedregular';
+        }
+        .swiper-pagination-switch {
+            display: inline-block;
+            cursor: pointer;
+        }
+        .swiper-visible-switch {
+            background: #aaa;
+        }
+        .swiper-active-switch {
+            background: #fff;
+        }
+
+    }
+    .pagination {
+        position: absolute;
+        z-index: 20;
+        left: 10px;
+        bottom: 10px;
+    }
+}
+
+
+
+/* Extra small device */
+@media (max-width: $screen-xs-max) {
+    $menu-fonsize: 9px;
+    $menu-height: 40px;
+    .tab-menubar {
+        font-size: $menu-fonsize;
+        height: $menu-height;
+        .swiper-wrapper .swiper-slide  a {
+            line-height: ( $menu-height - 14px );
+            margin-top: 7px;
+        }
+    }
+}
+
+/* Small Device */
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+    $menu-fonsize: 18px;
+    $menu-height: 70px;
+    .tab-menubar {
+        font-size: $menu-fonsize;
+        height: $menu-height;
+        .swiper-wrapper .swiper-slide  a {
+            line-height: ( $menu-height - 20px );
+            margin-top: 10px;
+        }
+    }
+}
+
+/* Medium Device */
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+    $menu-fonsize: 22px;
+    $menu-height: 80px;
+    .tab-menubar {
+        font-size: $menu-fonsize;
+        height: $menu-height;
+        .swiper-wrapper .swiper-slide  a {
+            line-height: ( $menu-height - 18px );
+            margin-top: 9px;
+        }
+    }
+}
+
+/* Large Device */
+@media (min-width: $screen-lg-min) {
+    $menu-fonsize: 25px;
+    $menu-height: 86px;
+    .tab-menubar {
+        font-size: $menu-fonsize;
+        height: $menu-height;
+        .swiper-wrapper .swiper-slide  a {
+            line-height: ( $menu-height - 28px );
+            margin-top: 14px;
+        }
+    }
+}

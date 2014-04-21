@@ -1,0 +1,14 @@
+*.pyc
+*.pyo
+*.db
+.DS_Store
+.coverage
+.dir-locals.el
+
+monitor/settings/local.py
+public/
+.idea/
+.sass-cache/
+var/
+env/
+tools/

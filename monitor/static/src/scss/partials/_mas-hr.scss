@@ -1,0 +1,23 @@
+.mas-hr {
+    position: absolute;
+    height: 12px;
+    margin-top: -4px;
+    width: 100%;
+    z-index: 2;
+    b {
+        $well: (100% / 7);
+        color: transparent;
+        text-indent: 9999999;
+        display: block;
+        float: left;
+        height: 100%;
+        width: $well;
+    }
+}
+.mas-hr b:nth-child(1){ background-color: #cf000f; } //Rojos
+.mas-hr b:nth-child(2){ background-color: #2574a9; } //Azul
+.mas-hr b:nth-child(3){ background-color: #6bb9f0; } //Celeste
+.mas-hr b:nth-child(4){ background-color: #c5eff7; } //Crema
+.mas-hr b:nth-child(5){ background-color: #03a678; } //Verde
+.mas-hr b:nth-child(6){ background-color: #f7ca18; } //Amarillo
+.mas-hr b:nth-child(7){ background-color: #e87e04; } //Naranja

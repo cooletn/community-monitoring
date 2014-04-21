@@ -1,0 +1,17 @@
+<div class="alert alert-info">Hay <strong>{{nro_no}}.</strong></div>
+<table class="table table-bordered">
+<tr>
+    <th>Nro.</th>
+    <th>NOMBRE</th>
+    <th>CORREO</th>
+    <th>WEB</th>
+</tr>
+{% for member in personal %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{member.name}}</td>
+        <td>{{member.email}}</td>
+        <td>{{member.website}}</td>
+    </tr>
+{% endfor %}
+</table>

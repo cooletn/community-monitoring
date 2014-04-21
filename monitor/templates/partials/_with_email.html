@@ -1,0 +1,18 @@
+<br>
+<div class="alert alert-info">Hay <strong>{{nro_yes}}.</strong> Empresas con Correo</div>
+<table class="table table-bordered">
+<tr>
+    <th>Nro.</th>
+    <th>NOMBRE</th>
+    <th>CORREO</th>
+    <th>WEB</th>
+</tr>
+{% for company in with_email %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{company.name}}</td>
+        <td>{{company.email}}</td>
+        <td>{{company.website}}</td>
+    </tr>
+{% endfor %}
+</table>

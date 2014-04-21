@@ -1,0 +1,35 @@
+                    _       
+                   (_)_   ____ _  _____  __
+		   | \ \ / / _` |/ __\ \/ /
+		   | |\ V / (_| | (__ >  < 
+		  _/ | \_/ \__,_|\___/_/\_\
+		 |__/                     
+                
+
+    Following mentions are for the team that is directly involved with
+    the success of this site, to all of them Thank you.
+
+    
+
+/* --- TEAM ----------------------------------------------------------------- */
+
+
+  Victor Aguilar C. (Full Stack Developer)
+  Blog: jvacx.com
+  Twitter: @jvacx
+  LinkedIn:jvacx
+  Location: La Paz -  Bolivia
+
+
+/* --- THANKS --------------------------------------------------------------- */
+
+
+
+/* --- SITE ----------------------------------------------------------------- */
+
+  Last update: 2014/04/17
+  Standards:   HTML5, CSS3
+  Components:  Django, Backbone.js, Compass, Twitter Bootstrap, jQuery
+  Language:    English, Castellano
+  IDE:         Sublime Text 2, VIM, PyCharm
+
